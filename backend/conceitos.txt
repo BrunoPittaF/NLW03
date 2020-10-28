@@ -1,0 +1,29 @@
+localhost:3333 pra acessar
+Rota = conjunto
+Recurso = usuário
+
+Métodos HTTP = Get, Post, Delete , Put
+    //Get = Busca informação (lista, item)
+    //Post = Criando informação nova 
+    //Put = Editando informação
+    //Delete = Deletar uma informação
+    
+Parâmetros = Query
+    //Query: 
+        - Enviados dentro da rota
+            Exemplo: http://localhost:3333/users?search=bruno
+    //Route:
+        - Tambem enviados dentro da rota mas sem um nome
+            Exemplo: http://localhost:3333/users/1 (Identificar um recurso)
+    //Body:
+        - Dados grandes que nao cabem nos anteriores, dados complexos/completos
+            Exemplo: http://localhost:3333/users/1
+
+
+Métodos das migrations
+    //Up
+        - Realiza as alterações no banco de dados 
+            Exemplo: Criar tabela, Campo, Deletar Campo
+
+    //Down
+        - Desfaz o que foi feito no Up
