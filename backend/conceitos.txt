@@ -27,3 +27,18 @@ Métodos das migrations
 
     //Down
         - Desfaz o que foi feito no Up
+
+
+Entity: Associa o Model a tabela no banco
+
+Column e PrimaryGenerateColumn: AutoExplicativo
+    - PrimaryGenerateColumn geralmente vai receber increment como argumento, 
+    ja que está se referindo como primary key, depende da coluna/tabela
+
+No server.ts
+    -Desestrutura o request.body (vulgo, corpo da requisição), nas colunas necessarias para a requisição ocorrer.
+    em seguida, com o getRepository cria e salva o objeto criado.
+
+"response.status(201).json(orphanage)"
+status(numero) = numero da requisição, os numeros de requisição são um código tabelado, não são obrigatórios
+mas extremamente úteis para o desenvolvimento para facilitar a identificação de possiveis problemas ou sucessos.
