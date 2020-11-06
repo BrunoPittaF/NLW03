@@ -2,6 +2,11 @@ localhost:3333 pra acessar
 Rota = conjunto
 Recurso = usuário
 
+Ctrl + espaço aparece as options no vscode
+
+yarn dev = inicia a aplicação
+
+
 Métodos HTTP = Get, Post, Delete , Put
     //Get = Busca informação (lista, item)
     //Post = Criando informação nova 
@@ -42,3 +47,13 @@ No server.ts
 "response.status(201).json(orphanage)"
 status(numero) = numero da requisição, os numeros de requisição são um código tabelado, não são obrigatórios
 mas extremamente úteis para o desenvolvimento para facilitar a identificação de possiveis problemas ou sucessos.
+
+
+métodos do Controller:
+-Index
+-show
+-Create
+-Update
+-Delete
+
+
