@@ -1,0 +1,6 @@
+useEffect:
+    -Recebe 2 parametros:
+        -Qual ação quer executar
+        -Quando quer executar
+
+    ao usar uma variavel na chamada da api, usar dentro do array de "quando executar"
