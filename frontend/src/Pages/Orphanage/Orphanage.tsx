@@ -57,7 +57,7 @@ const Orphanage: React.FC = () => {
               return (
                 <button 
                 key={image.id} 
-                className={activeImageIndex == index ? 'active' : ''} 
+                className={activeImageIndex === index ? 'active' : ''} 
                 type="button"
                 onClick={() => {
                   setActiveImageIndex(index)
