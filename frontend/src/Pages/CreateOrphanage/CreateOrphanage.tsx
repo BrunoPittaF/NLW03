@@ -21,7 +21,7 @@ const CreateOrphanage: React.FC = () => {
   const [about, setAbout] = useState("");
   const [instructions, setInstructions] = useState("");
   const [opening_hours, setOpeningHours] = useState("");
-  const [opening_on_weekends, setOpenOnWeekends] = useState(true);
+  const [open_on_weekends, setOpenOnWeekends] = useState(true);
   const [images, setImages] = useState<File[]>([]);
   const [previewImages, setPreviewImages] = useState<string[]>([]);
 
@@ -37,16 +37,17 @@ const CreateOrphanage: React.FC = () => {
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
     data.append('instructions', instructions);
-    data.append('nameopening_hours', opening_hours);
-    data.append('opening_on_weekends', String(opening_on_weekends));
+    data.append('opening_hours', opening_hours);
+    data.append('open_on_weekends', String(open_on_weekends));
 
     images.forEach(image =>{
-      data.append('image', image);
+      data.append('images', image);
     })
 
    await api.post('orphanages', data);
 
    alert('Cadastro realizado com sucesso');
+   
    history.push('/app');
   
   }
@@ -55,16 +56,17 @@ const CreateOrphanage: React.FC = () => {
     if(!event.target.files){
       return;
     }
-    const selectedImages = Array.from(event.target.files)
+    const selectedImages = Array.from(event.target.files);
 
     setImages(selectedImages);
 
     const selectedImagesPreview = selectedImages.map(image => {
       return URL.createObjectURL(image);
-    })
+    });
     setPreviewImages(selectedImagesPreview);
     
   }
+
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat, lng } = event.latlng;
 
@@ -167,7 +169,7 @@ const CreateOrphanage: React.FC = () => {
               <div className="button-select">
                 <button
                   type="button"
-                  className={opening_on_weekends ? "active" : ""}
+                  className={open_on_weekends ? "active" : ""}
                   onClick={() => setOpenOnWeekends(true)}
                 >
                   Sim
@@ -175,7 +177,7 @@ const CreateOrphanage: React.FC = () => {
 
                 <button
                   type="button"
-                  className={!opening_on_weekends ? "active" : ""}
+                  className={!open_on_weekends ? "active" : ""}
                   onClick={() => setOpenOnWeekends(false)}
                 >
                   Não
